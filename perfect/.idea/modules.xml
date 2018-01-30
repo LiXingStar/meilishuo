@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../perfect/.idea/prefect.iml" filepath="$PROJECT_DIR$/../perfect/.idea/prefect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/prefect.iml" filepath="$PROJECT_DIR$/.idea/prefect.iml" />
     </modules>
   </component>
 </project>
