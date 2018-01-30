@@ -12,14 +12,13 @@ $(function(){
             type:'post',
             data:formdata,
             success:function(data){
-
-               /* if(data == 'ok'){
+                if(data == 'ok'){
                     location.href = '/perfect/index.php/catemanage';
                 }else if(data == 'error'){
                     alert('密码错误');
                 }else{
                     alert('用户名不存在');
-                }*/
+                }
             }
         });
         return false;
