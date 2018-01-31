@@ -11,10 +11,14 @@ html , body{
     height: 100%;
     overflow: hidden;
 }
+body{
+    overflow: auto;
+}
 .nav{
     width: 100%;
-    height:80px;
+    height:60px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    background: #FFFFFF;
 }
 .nav > .content{
     width: 1200px;
@@ -23,10 +27,11 @@ html , body{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 .content > img{
-    width: 60px;
-    height:60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -36,11 +41,11 @@ html , body{
     height: calc( 100% - 90px);
     border-right: 1px solid #b1b1b1;
     border-top: 1px solid #b1b1b1;
-    margin-top: 10px;
+    margin-top: 70px;
 }
 
 .left >  h2{
-    line-height: 40px;
+    line-height: 30px;
     color: #000000;
     padding-left: 20px;
     border-bottom: 1px solid #b1b1b1;
@@ -48,7 +53,7 @@ html , body{
 }
 .left > h3{
     font-size: 16px;
-    line-height: 40px;
+    line-height: 30px;
     color: #494949;
     padding-left: 20px;
     border-bottom: 1px solid #b1b1b1;
@@ -69,7 +74,7 @@ html , body{
     width: calc( 100% - 180px - 1px);
     height: calc(100% - 90px );
     border-top:1px solid #b1b1b1;
-    margin-top: 10px;
+    margin-top: 70px;
     padding: 10px;
     box-sizing: border-box;
 }
