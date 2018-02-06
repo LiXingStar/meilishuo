@@ -8,6 +8,7 @@ class db
     function __construct($tablename)
     {
         $this->tablename = $tablename;
+        $this->whereson  = '';
         $this->config();
     }
 
@@ -27,7 +28,7 @@ class db
         if (strpos($info, 'elect')) {
             $sql = $info;
         } else {
-            $sql = "select $info from $this->tablename";
+            $sql = "select $info from $this->tablename  " . $this->whereson;
         }
         return $this->connect->query($sql)->fetch_all(MYSQLI_ASSOC);
     }
@@ -71,4 +72,10 @@ class db
         $this->connect->query($sql);
         return $this->connect->affected_rows;
     }
+
+    function where($info){
+       $this->whereson = "where " . $info;
+       return $this;
+    }
+
 }

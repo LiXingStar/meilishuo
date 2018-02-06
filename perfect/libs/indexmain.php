@@ -6,4 +6,11 @@ class indexmain{
         $this->smarty->setTemplateDir('app');
         $this->smarty->setCompileDir('compile');
     }
+    function checkLogin(){
+        session_start();
+        if(isset($_SESSION['islogin'])){
+            return true;
+        }
+        return false;
+    }
 }

@@ -16,7 +16,7 @@ class router
     static function index()
     {
        if(!isset($_SERVER['PATH_INFO']) || $_SERVER['PATH_INFO'] == '/'){
-           $model = 'login';
+           $model = 'index';
            $fn = 'index';
        }else {
           $info = explode('/',substr($_SERVER['PATH_INFO'],1));

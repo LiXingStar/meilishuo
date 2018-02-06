@@ -263,6 +263,9 @@ body{
 	border-bottom: 1px solid #bdbdbd;
 	display: flex;
 	align-items: center;
+	position: fixed;
+	left:0;
+	bottom: 1rem;
 }
 .quanxuan{
 	display: block;

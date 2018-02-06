@@ -1,0 +1,85 @@
+{include file='view/manageheader.html'}
+{include file='view/left.html'}
+<script type="text/javascript" charset="utf-8" src="{PLUG_PATH}ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="{PLUG_PATH}ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="{PLUG_PATH}ueditor/lang/zh-cn/zh-cn.js"></script>
+<script src="{JS_PATH}goodsadd.js"></script>
+<style>
+    .form-group{
+        width: 30%;
+        margin-left: 15px;
+        margin-bottom: 25px!important;
+    }
+</style>
+<div class="right">
+    <form class="form-inline">
+        <div class="form-group">
+            <label>所属分类</label>
+            <select class="form-control" name="cid">
+                <option value="0">一级分类</option>
+                {$cate}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>所属商家</label>
+            <select class="form-control" name="bid">
+                {foreach $boss as $v}
+                 <option value="{$v['bid']}">{$v['bname']}</option>
+                {/foreach}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputName2">名称</label>
+            <input type="text" class="form-control" id="exampleInputName2" placeholder="名称" name="gname" >
+        </div>
+        <div class="form-group">
+            <label for="exampleInputTag">标签</label>
+            <input type="text" class="form-control" id="exampleInputTag" placeholder="名称,标签用，号隔开" name="gtag">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputprice">现价</label>
+            <input type="text" class="form-control" id="exampleInputprice" placeholder="现价" name="gprice">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputOrigin">原价</label>
+            <input type="text" class="form-control" id="exampleInputOrigin" placeholder="原价" name="goriginprice">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputNumber">销量</label>
+            <input type="text" class="form-control" id="exampleInputNumber" placeholder="销量" name="gsales">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputlove">收藏</label>
+            <input type="text" class="form-control" id="exampleInputlove" placeholder="收藏" name="glove">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputActive">活动</label>
+            <input type="text" class="form-control" id="exampleInputActive" placeholder="活动" name="gactive">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleInputThumb">略图</label>
+            <input type="file" class="form-control" id="exampleInputThumb">
+        </div>
+        <input type="hidden" name="gthumb">
+
+        <div class="form-group">
+            <label for="exampleInputImages">组图</label>
+            <input type="file" class="form-control" id="exampleInputImages" multiple>
+        </div>
+        <input type="hidden" name="gimages">
+
+        <div class="form-group">
+            <label for="exampleInputSize">尺寸</label>
+            <input type="file" class="form-control" id="exampleInputSize" >
+        </div>
+        <input type="hidden" name="gsize">
+        <div class="form-group">
+            <label>内容</label>
+            <div id="editor" type="text/plain" style="width:1024px;height:200px;" name="gcontent"></div>
+        </div>
+        <button type="submit" class="btn btn-info" style="position: absolute;top: 10px;right: 150px;" >提交</button>
+    </form>
+</div>
+</body>
+</html>

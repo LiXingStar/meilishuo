@@ -77,10 +77,10 @@ body{
 	padding-bottom: 0.15rem;
 	border: none;
 	border-bottom: 1px solid #ededed;
-	color: #ededed;
+	color: #080808;
 	text-align: center;
 	line-height: 0.63rem;
-	font-size: 0.48rem;
+	font-size: 0.28rem;
 	display: block;
 }
 .load{

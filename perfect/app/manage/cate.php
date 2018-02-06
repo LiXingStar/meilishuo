@@ -24,6 +24,19 @@ class cate extends indexmain {
     }
     function lists(){
         $pid = $_GET['pid'];
-//        new db('goods')
+        /* goodslist*/
+        $goods = new db('goods');
+        $goodslist = $goods->where("cid=$pid")->select("gid,gthumb,gtag,gprice,glove");
+
+        /*title*/
+        $cname = $this->db->where("cid=$pid")->select('cname')[0]['cname'];
+        /* category*/
+        $cid = $this->db->where("cid=$pid")->select("pid")[0]['pid'];
+        $category = $this->db->where("pid=$cid")->select("cid,cname,cthumb");
+
+        $this->smarty->assign('title',$cname);
+        $this->smarty->assign("category",$category);
+        $this->smarty->assign('goodslist',$goodslist);
+        $this->smarty->display('view/detailslclass.html');
     }
 }

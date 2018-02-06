@@ -70,13 +70,14 @@ body{
     padding-left: 30px;
 }
 .right{
-    float: left;
+    margin-left: 181px;
     width: calc( 100% - 180px - 1px);
     height: calc(100% - 90px );
     border-top:1px solid #b1b1b1;
     margin-top: 70px;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
 }
 .add{
     float: right;

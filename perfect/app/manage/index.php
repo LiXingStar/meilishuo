@@ -4,7 +4,7 @@
      {
          parent::__construct();
      }
-     function show(){
+     function index(){
          $this->smarty->assign('title','GTime');
         $this->smarty->display('view/index.html');
      }

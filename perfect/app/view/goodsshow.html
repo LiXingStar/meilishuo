@@ -1,0 +1,49 @@
+{include file='view/manageheader.html'}
+{include file='view/left.html'}
+<style>
+    input{
+        border:none;
+        background: none;
+        outline: none;
+    }
+</style>
+<script src="{JS_PATH}cateshow.js"></script>
+<div class="right">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>gid</th>
+               <th>名称</th>
+               <th>原价</th>
+               <th>现价</th>
+               <th>销量</th>
+               <th>收藏</th>
+               <th>缩略图</th>
+               <th>bid</th>
+               <th>cid</th>
+               <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {foreach $data as $v}
+            <tr data-id="{$v['cid']}">
+                <td>{$v['gid']} </td>
+                <td><input type="text" value="{$v['gname']}" data-type="gname"> </td>
+                <td><input type="text" value="{$v['goriginprice']}" data-type="goriginprice"> </td>
+                <td><input type="text" value="{$v['gprice']}" data-type="gprice"> </td>
+                <td><input type="text" value="{$v['gsales']}" data-type="gsales"> </td>
+                <td><input type="text" value="{$v['glove']}" data-type="glove"> </td>
+                <td><img src="{$v['gthumb']}" alt="" width="40"></td>
+                <td><input type="text" value="{$v['bid']}" data-type="bid"> </td>
+                <td><input type="text" value="{$v['cid']}" data-type="cid"> </td>
+                <td><button class="btn btn-danger del">删除</button></td>
+            </tr>
+        {/foreach}
+
+        </tbody>
+        
+    </table>
+
+</div>
+</body>
+</html>

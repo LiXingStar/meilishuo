@@ -1,6 +1,5 @@
 {include file='view/header.html'}
 <link rel="stylesheet" href="{CSS_PATH}delclass.css">
-
 	<!-- 标题导航 -->
 	<div class="title-box">
 		<div class="title-left">应季流行</div>
@@ -9,7 +8,7 @@
 	<!-- 标题导航结束 -->
 	<div class="class-box">
 		{foreach $data  as $v}
-		<a href="/perfect/index.php/cate/list?pid={$v['cid']}" class="shop">
+		<a href="/perfect/index.php/cate/lists?pid={$v['cid']}" class="shop">
 			<div class="shop1"><img src="{$v['cthumb']}" alt=""></div>
 			<div class="shop-word">{$v['cname']}</div>
 		</a>
@@ -73,25 +72,4 @@
 		</div>
 	<!-- 流行结束 -->
 	<!-- foot -->
-	<div class="footer">
-        	<a href="index.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-shouye"></div>
-        		<div class="bankuai-word">首页</div>
-        	</a>
-        	<a href="class.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-leimupinleifenleileibie"></div>
-        		<div class="bankuai-word1">分类</div>
-        	</a>
-        	<a href="shop-car.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-bao"></div>
-        		<div class="bankuai-word">购物车</div>
-        	</a>
-        	<a href="wo.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-5"></div>
-        		<div class="bankuai-word">我</div>
-        	</a>
-        </div>
-        <div id="foot"></div>
-	<!-- foot结束 -->
-</body>
-</html>
+{include file='view/footer.html'}

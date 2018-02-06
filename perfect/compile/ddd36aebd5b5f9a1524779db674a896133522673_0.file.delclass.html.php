@@ -1,33 +1,33 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-01-31 09:49:25
+/* Smarty version 3.1.30, created on 2018-02-06 01:05:00
   from "C:\wamp64\www\perfect\app\view\delclass.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a71912516e353_11787346',
+  'unifunc' => 'content_5a78ff3c2937d6_90900133',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ddd36aebd5b5f9a1524779db674a896133522673' => 
     array (
       0 => 'C:\\wamp64\\www\\perfect\\app\\view\\delclass.html',
-      1 => 1517391881,
+      1 => 1517818240,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:view/header.html' => 1,
+    'file:view/footer.html' => 1,
   ),
 ),false)) {
-function content_5a71912516e353_11787346 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a78ff3c2937d6_90900133 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:view/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <link rel="stylesheet" href="<?php echo CSS_PATH;?>
 delclass.css">
-
 	<!-- 标题导航 -->
 	<div class="title-box">
 		<div class="title-left">应季流行</div>
@@ -40,7 +40,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
-		<a href="/perfect/index.php/cate/list?pid=<?php echo $_smarty_tpl->tpl_vars['v']->value['cid'];?>
+		<a href="/perfect/index.php/cate/lists?pid=<?php echo $_smarty_tpl->tpl_vars['v']->value['cid'];?>
 " class="shop">
 			<div class="shop1"><img src="<?php echo $_smarty_tpl->tpl_vars['v']->value['cthumb'];?>
 " alt=""></div>
@@ -112,26 +112,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 		</div>
 	<!-- 流行结束 -->
 	<!-- foot -->
-	<div class="footer">
-        	<a href="index.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-shouye"></div>
-        		<div class="bankuai-word">首页</div>
-        	</a>
-        	<a href="class.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-leimupinleifenleileibie"></div>
-        		<div class="bankuai-word1">分类</div>
-        	</a>
-        	<a href="shop-car.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-bao"></div>
-        		<div class="bankuai-word">购物车</div>
-        	</a>
-        	<a href="wo.html" class="bankuai">
-        		<div class="bankuai-icon iconfont icon-5"></div>
-        		<div class="bankuai-word">我</div>
-        	</a>
-        </div>
-        <div id="foot"></div>
-	<!-- foot结束 -->
-</body>
-</html><?php }
+<?php $_smarty_tpl->_subTemplateRender("file:view/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
 }

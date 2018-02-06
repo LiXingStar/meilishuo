@@ -1,0 +1,36 @@
+{include file='view/manageheader.html'}
+{include file='view/left.html'}
+<style>
+    input{
+        border:none;
+        background: none;
+        outline: none;
+    }
+</style>
+<div class="right">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+               <th>bid</th>
+               <th>店铺名称</th>
+               <th>缩略图</th>
+               <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {foreach $data as $v}
+            <tr>
+                <td>{$v['bid']} </td>
+                <td>{$v['bname']} </td>
+                <td><img src="{$v['bthumb']}" alt="" width="40"></td>
+                <td><a href="/perfect/index.php/bossmanage/updateshow?bid={$v['bid']}" class="btn btn-info">修改</a> <a href="/perfect/index.php/bossmanage/delete?bid={$v['bid']}" class="btn btn-info">删除</a></td>
+            </tr>
+        {/foreach}
+
+        </tbody>
+        
+    </table>
+
+</div>
+</body>
+</html>

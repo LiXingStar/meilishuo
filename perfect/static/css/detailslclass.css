@@ -204,13 +204,15 @@ body{
 	height: 6.97rem;
 	background: #fff;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .liuxing-box1{
-	width: 3.45rem;
+	width: 3.65rem;
 	height: 6.67rem;
 	background: #fff;
 	margin-top: 0.3rem;
+	overflow: hidden;
 }
 .liuxing-shangpin{
 	display: block;
@@ -290,7 +292,7 @@ body{
 	background: #fff;
 }
 .icon-wujiaoxing{
-	color: #eee;
+	color: #FFF13D;
 }
 /* 流行结束 */
 /* foot */
