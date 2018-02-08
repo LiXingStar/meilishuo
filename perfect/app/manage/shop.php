@@ -30,4 +30,15 @@ class shop extends indexmain {
         }
         echo $row;
     }
+
+    function addnum(){
+        session_start();
+        $gid = $_GET['gid'];
+        $number = $_GET['number'];
+        $uid = $_SESSION['uid'];
+        $sql = "update shopcar set number=$number where uid=$uid and gid =$gid";
+       $row =  $this->db->update($sql);
+       echo $row;
+    }
+
 }

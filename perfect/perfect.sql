@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 2018-02-06 09:47:15
+-- Generation Time: 2018-02-08 08:26:20
 -- 服务器版本： 5.7.19
 -- PHP Version: 5.6.31
 
@@ -165,6 +165,43 @@ INSERT INTO `manager` (`id`, `username`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `orderattach`
+--
+
+DROP TABLE IF EXISTS `orderattach`;
+CREATE TABLE IF NOT EXISTS `orderattach` (
+  `rid` int(10) NOT NULL AUTO_INCREMENT,
+  `gid` int(10) NOT NULL,
+  `number` int(10) NOT NULL,
+  `oid` int(10) NOT NULL,
+  PRIMARY KEY (`rid`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `orderlist`
+--
+
+DROP TABLE IF EXISTS `orderlist`;
+CREATE TABLE IF NOT EXISTS `orderlist` (
+  `oid` int(10) NOT NULL AUTO_INCREMENT,
+  `uid` int(10) NOT NULL,
+  `status` int(10) NOT NULL DEFAULT '1' COMMENT '1代付款 2 代发货 3 待收货 4交易完成',
+  PRIMARY KEY (`oid`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `orderlist`
+--
+
+INSERT INTO `orderlist` (`oid`, `uid`, `status`) VALUES
+(5, 1, 1),
+(6, 1, 1);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `shopcar`
 --
 
@@ -182,8 +219,8 @@ CREATE TABLE IF NOT EXISTS `shopcar` (
 --
 
 INSERT INTO `shopcar` (`sid`, `uid`, `gid`, `number`) VALUES
-(1, 1, 1, 1),
-(2, 1, 2, 1),
+(1, 1, 1, 14),
+(2, 1, 2, 4),
 (3, 2, 3, 2),
 (4, 2, 2, 5),
 (5, 2, 1, 39);

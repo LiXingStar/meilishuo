@@ -3,16 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>G-Time——购物车</title>
+	<link rel="stylesheet" href="{CSS_PATH}bootstrap.css">
 	<link rel="stylesheet" href="{CSS_PATH}shop-car.css">
 	<link rel="stylesheet" href="{ICON_PATH}iconfont.css">
 	<meta name="viewport" content="width=device-width">
 	<script src="{JS_PATH}rem.js"></script>
+    <script src="{JS_PATH}jquery.js"></script>
+    <script src="{JS_PATH}shopcar.js"></script>
 </head>
 <body>
 	<!-- 头部 -->
 	<div class="header">
 		<a href="" class="fangdajing"></a>
-		<div class="meilishuo">购物车(1)</div>
+		<div class="meilishuo">购物车( <span class="total">1</span>)</div>
 		<a href="" class="message">编辑</a>
 	</div>
 	<div id="head"></div>
@@ -28,20 +31,33 @@
 	<!-- 美丽优选结束 -->
 	<!-- 购物车 -->
     {foreach $data as $v}
-	<div class="shop-car">
-		<a href="details.html" class="shop-car-duigou iconfont icon-duigou"></a>
+	<div class="shop-car" data-gid="{$v['gid']}">
+		<button class="shop-car-duigou iconfont icon-duigou"></button>
 		<div class="shop-car-right">
 			<div class="shop-car-right-top">
 				<a href="/perfect/index.php/goods/show?gid={$v['gid']}" class="shop-car-img"><img src="{$v['gthumb']}" alt=""></a>
 				<div class="shop-car-word">
-					<a href="details.html" class="shop-car-word-title">{$v['gname']}</a>
+					<a href="/perfect/index.php/goods/show?gid={$v['gid']}" class="shop-car-word-title">{$v['gname']}</a>
 					<div class="guige">
 						<div class="guige1">颜色:粉色</div>
 						<div class="guige1">尺码:均码</div>
 					</div>
 					<div class="jiage">
 						<div class="jiaqian">{$v['gprice']}</div>
-						<div class="jiaqian">{$v['number']}</div>
+						<div class="jiaqian">
+
+							<div class="btn-toolbar">
+								<div class="btn-group btn btn-default reduce">
+									-
+								</div>
+								<div class="btn-group btn btn-default number">
+									{$v['number']}
+								</div>
+								<div class="btn-group btn btn-default add">
+									+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -80,10 +96,10 @@
 			<div class="quanxuan-word">全选</div>
 		</a>
 		<div class="heji">
-			<div class="heji-jiage">合计：¥65.00</div>
+			<div class="heji-jiage">合计：¥ <span class="totalPri">65.00</span></div>
 			<div class="heji-fuwu">不含运费、优惠扣减</div>
 		</div>
-		<a href="" class="jiesuan">去结算(1)</a>
+		<a class="jiesuan">去结算(<span class="total">1</span>)</a>
 	</div>
 	<!-- 全选结束 -->
 {include file='view/footer.html'}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-02-06 09:40:42
+/* Smarty version 3.1.30, created on 2018-02-08 07:41:48
   from "C:\wamp64\www\perfect\app\view\shop-car.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a79781a1aada2_03873369',
+  'unifunc' => 'content_5a7bff3c59c537_26440730',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bc53723100301090d45d632957cdf5a583561c6e' => 
     array (
       0 => 'C:\\wamp64\\www\\perfect\\app\\view\\shop-car.html',
-      1 => 1517910037,
+      1 => 1518075511,
       2 => 'file',
     ),
   ),
@@ -21,13 +21,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:view/footer.html' => 1,
   ),
 ),false)) {
-function content_5a79781a1aada2_03873369 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a7bff3c59c537_26440730 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>G-Time——购物车</title>
+	<link rel="stylesheet" href="<?php echo CSS_PATH;?>
+bootstrap.css">
 	<link rel="stylesheet" href="<?php echo CSS_PATH;?>
 shop-car.css">
 	<link rel="stylesheet" href="<?php echo ICON_PATH;?>
@@ -37,12 +39,20 @@ iconfont.css">
  src="<?php echo JS_PATH;?>
 rem.js"><?php echo '</script'; ?>
 >
+    <?php echo '<script'; ?>
+ src="<?php echo JS_PATH;?>
+jquery.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo JS_PATH;?>
+shopcar.js"><?php echo '</script'; ?>
+>
 </head>
 <body>
 	<!-- 头部 -->
 	<div class="header">
 		<a href="" class="fangdajing"></a>
-		<div class="meilishuo">购物车(1)</div>
+		<div class="meilishuo">购物车( <span class="total">1</span>)</div>
 		<a href="" class="message">编辑</a>
 	</div>
 	<div id="head"></div>
@@ -62,15 +72,17 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
-	<div class="shop-car">
-		<a href="details.html" class="shop-car-duigou iconfont icon-duigou"></a>
+	<div class="shop-car" data-gid="<?php echo $_smarty_tpl->tpl_vars['v']->value['gid'];?>
+">
+		<button class="shop-car-duigou iconfont icon-duigou"></button>
 		<div class="shop-car-right">
 			<div class="shop-car-right-top">
 				<a href="/perfect/index.php/goods/show?gid=<?php echo $_smarty_tpl->tpl_vars['v']->value['gid'];?>
 " class="shop-car-img"><img src="<?php echo $_smarty_tpl->tpl_vars['v']->value['gthumb'];?>
 " alt=""></a>
 				<div class="shop-car-word">
-					<a href="details.html" class="shop-car-word-title"><?php echo $_smarty_tpl->tpl_vars['v']->value['gname'];?>
+					<a href="/perfect/index.php/goods/show?gid=<?php echo $_smarty_tpl->tpl_vars['v']->value['gid'];?>
+" class="shop-car-word-title"><?php echo $_smarty_tpl->tpl_vars['v']->value['gname'];?>
 </a>
 					<div class="guige">
 						<div class="guige1">颜色:粉色</div>
@@ -79,8 +91,21 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 					<div class="jiage">
 						<div class="jiaqian"><?php echo $_smarty_tpl->tpl_vars['v']->value['gprice'];?>
 </div>
-						<div class="jiaqian"><?php echo $_smarty_tpl->tpl_vars['v']->value['number'];?>
-</div>
+						<div class="jiaqian">
+
+							<div class="btn-toolbar">
+								<div class="btn-group btn btn-default reduce">
+									-
+								</div>
+								<div class="btn-group btn btn-default number">
+									<?php echo $_smarty_tpl->tpl_vars['v']->value['number'];?>
+
+								</div>
+								<div class="btn-group btn btn-default add">
+									+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -127,10 +152,10 @@ upload_6h7ae6f12aabdf98gf1500a6ie06e_1600x2250.jpg_320x999.webp" alt="" class="l
 			<div class="quanxuan-word">全选</div>
 		</a>
 		<div class="heji">
-			<div class="heji-jiage">合计：¥65.00</div>
+			<div class="heji-jiage">合计：¥ <span class="totalPri">65.00</span></div>
 			<div class="heji-fuwu">不含运费、优惠扣减</div>
 		</div>
-		<a href="" class="jiesuan">去结算(1)</a>
+		<a class="jiesuan">去结算(<span class="total">1</span>)</a>
 	</div>
 	<!-- 全选结束 -->
 <?php $_smarty_tpl->_subTemplateRender("file:view/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

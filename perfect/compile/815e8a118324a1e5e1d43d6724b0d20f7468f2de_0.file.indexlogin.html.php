@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-02-06 06:11:02
+/* Smarty version 3.1.30, created on 2018-02-07 05:41:30
   from "C:\wamp64\www\perfect\app\view\indexlogin.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5a7946f6e97ab7_58623454',
+  'unifunc' => 'content_5a7a918a660213_18765780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '815e8a118324a1e5e1d43d6724b0d20f7468f2de' => 
     array (
       0 => 'C:\\wamp64\\www\\perfect\\app\\view\\indexlogin.html',
-      1 => 1517897080,
+      1 => 1517982089,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a7946f6e97ab7_58623454 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a7a918a660213_18765780 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +48,7 @@ indexlogin.js"><?php echo '</script'; ?>
 <body>
 <!-- 头部 -->
 <div class="header">
-    <a href="index.html" class="zuo iconfont icon-zuo"></a>
+    <a href="javascript:history.back();" class="zuo iconfont icon-zuo"></a>
     <div class="meilishuo">登录</div>
     <a href="" class="message">忘记密码</a>
 </div>
