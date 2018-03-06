@@ -5,8 +5,15 @@ class login extends main {
       parent::__construct();
       $this->db = new db('manager');
     }
+    function code(){
+        $code  = new code(200,60);
+        $code->output();
+//        echo $code->fontfile;
+//        session_start();
+//        $_SESSION['code'] = $code->result;
+    }
     function index(){
-       $this->smarty->display('view/login.html');
+        $this->smarty->display('view/login.html');
     }
     function check(){
         $username = $_POST['username'];

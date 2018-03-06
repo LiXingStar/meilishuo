@@ -1,11 +1,14 @@
 <?php
-class orders extends indexmain {
+
+class orders extends indexmain
+{
     function __construct()
     {
         parent::__construct();
         $this->db = new db('orderlist');
     }
-    function add(){
+    function add()
+    {
 //        var_dump(json_decode($_GET['data']));
         $data = json_decode($_GET['data']);
         session_start();
@@ -14,17 +17,16 @@ class orders extends indexmain {
         $oid = $this->db->connect->insert_id;
         $db = new db('orderattach');
         $sql = "insert into orderattach (gid,number,oid) values ";
-        foreach ($data as $v){
-            $sql.= "('" . $v->gid ."','" . $v->number ."'," . $oid ."), ";
+        foreach ($data as $v) {
+            $sql .= "('" . $v->gid . "','" . $v->number . "'," . $oid . "), ";
         }
-        $sql = substr($sql,0,-2);
+        $sql = substr($sql, 0, -2);
 
         $rows = $db->insert($sql);
 
-
-        if($rows >=1){
+        if ($rows >= 1) {
             echo 'ok';
-        }else if($rows < 0){
+        } else if ($rows < 0) {
             echo 'error';
         }
     }

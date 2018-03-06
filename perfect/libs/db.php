@@ -4,7 +4,6 @@ class db
 {
     public $tablename;
     public $connect;
-
     function __construct($tablename)
     {
         $this->tablename = $tablename;

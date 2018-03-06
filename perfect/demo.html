@@ -8,16 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<button id="btn">click</button>
+
 </body>
 </html>
 <script>
-    window.onload = function(){
-        var btn = document.getElementById('btn');
-        btn.addEventListener('click',function(){
-            navigator.getUserMedia({'video':true},function (stream) {
-                console.log(stream)
-            },function(e){console.log(e)})
-        })
-    }
 </script>
